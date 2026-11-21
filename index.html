@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#04080c">
+  <meta name="description" content="一张关于中国戒网瘾学校的兔子洞冰山图：8 个层级、120 个词条、48 条证据链接。从“网瘾”这个词，到 86 条规则与 13 号室。">
+  <title>戒网瘾学校兔子洞 · THE CAMP ICEBERG</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <div class="bg-aurora" aria-hidden="true"></div>
+  <div class="abyss-shade" id="abyss-shade" aria-hidden="true"></div>
+  <canvas id="snow" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <header class="topbar" id="top">
+    <a class="brand" href="#top" aria-label="回到水面">
+      <span class="brand-mark" aria-hidden="true"><i></i></span>
+      <span class="brand-text">戒网瘾学校冰山<small>THE CAMP ICEBERG</small></span>
+    </a>
+    <nav class="topnav" aria-label="主导航">
+      <a href="#tiers">冰山图</a>
+      <a href="#method">证据方法</a>
+      <a href="#about">关于</a>
+    </nav>
+    <div class="topbar-right">
+      <span class="depth-chip" aria-live="polite">DEPTH <b id="depth-readout">0000</b><i>M</i></span>
+      <button class="random-btn" id="random-top" type="button"><span aria-hidden="true">↯</span> 随机坠落</button>
+    </div>
+  </header>
+
+  <aside class="depth-rail" aria-label="深度导航">
+    <span class="rail-label">DEPTH</span>
+    <div class="rail-line" aria-hidden="true"><span class="rail-fill" id="rail-fill"></span></div>
+    <div class="rail-dots" id="rail-dots"></div>
+    <span class="rail-end">11K</span>
+  </aside>
+
+  <main class="page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span> 8 TIERS · 120 ENTRIES · 48 SOURCES</p>
+        <h1 id="hero-title"><span>戒网瘾学校</span><span class="outline">兔子洞</span></h1>
+        <p class="lede">一张向下生长的矫正产业图。从家长在搜索框里输入“戒网瘾”，到 86 条规则、13 号室和 180 封被截留的信。越往下，越难确认自己看见的是治疗，还是审讯。</p>
+        <p class="hero-warning">内容提示：电击、体罚、非法拘禁、自杀与自残。请量力阅读，不要一次潜到底。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#tiers">开始下潜 <span aria-hidden="true">↓</span></a>
+          <button class="btn ghost" id="random-hero" type="button">随机坠落 <span aria-hidden="true">↯</span></button>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>层级</dt><dd>08</dd></div>
+          <div><dt>词条</dt><dd>120</dd></div>
+          <div><dt>最深</dt><dd>11,000<span>m</span></dd></div>
+        </dl>
+      </div>
+
+      <div class="berg-wrap">
+        <div class="berg-head">
+          <span>VERTICAL SECTION</span>
+          <span>0—11,000 M</span>
+        </div>
+        <div class="berg-map" id="berg-map" aria-label="戒网瘾学校冰山剖面，点击层级下潜"></div>
+        <div class="berg-foot">
+          <span>海面 · 搜索框里的词</span>
+          <span>海床 · 86条</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto" aria-label="阅读提示">
+      <p>“越往下，越难确认自己看见的是治疗，还是审讯。”</p>
+      <span>向下滚动，或点击剖面中的任意一层。每一层都比上一层更接近规则本身。</span>
+    </section>
+
+    <div class="controls" id="controls">
+      <div class="controls-inner">
+        <label class="search-box" for="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+          <input id="search" type="search" placeholder="搜索词条、人名、年份、规则…" autocomplete="off" spellcheck="false">
+          <kbd>/</kbd>
+        </label>
+        <div class="filter-chips" id="category-filters" aria-label="按分类筛选"></div>
+        <button class="chip action-chip" id="unread-toggle" type="button" aria-pressed="false">只看未读</button>
+        <button class="chip action-chip" id="reset-filters" type="button">重置</button>
+      </div>
+      <div class="result-line">
+        <span id="result-count">120 个词条</span>
+        <span class="result-divider" aria-hidden="true"></span>
+        <span id="visited-count">已下潜 0 / 120</span>
+        <span class="result-hint">点击词条展开解释与证据链</span>
+      </div>
+    </div>
+
+    <div id="tiers" class="tiers"></div>
+
+    <section class="method" id="method" aria-labelledby="method-title">
+      <div class="section-label"><span>FIELD NOTES</span><span>证据方法</span></div>
+      <div class="method-head">
+        <h2 id="method-title">不要把“有链接”<br>误认为“有答案”。</h2>
+        <p>这张图混合了法院判决、官方通报、调查报道、当事人陈述、文化文本与网络争议。每个词条都尽量给出可追溯的来源，但来源不等于结论。第 6 层开始出现更多官方说法与现场说法的冲突；第 8 层是一份被媒体逐条整理的“86 条”规则，它本身就是一份需要被质疑的文本。部分链接可能因网站改版、删除或网络环境而无法打开；链接用于定位来源，不保证随时可达。你需要自己判断：谁在说话，谁被省略，证据能证明到什么程度。</p>
+      </div>
+      <div class="method-grid">
+        <article>
+          <span class="method-num">01</span>
+          <h3>证据有等级</h3>
+          <p>“一手档案”是法院判决、官方通知或通报原文；“调查报道”依赖记者核查；“当事人陈述”是幸存者、家属或前员工的回忆；“官方回应”是被举报方的说法；“争议”表示双方各执一词；“未证实”表示目前只有传闻或无法独立确认的视频。图中用状态标签标出，不把“有链接”当成“已定罪”。</p>
+        </article>
+        <article>
+          <span class="method-num">02</span>
+          <h3>争议会被标注</h3>
+          <p>杨永信未被刑事定罪；临沂卫健委 2024 年回函称未发现折磨病人。豫章书院案已有判决。新巴蜀的“冒充民警”、柯贞的阴某利案，在图中以“举报/指控/受审”表述，不预判结果。涉及未判决案件，请以法院最终裁判为准。</p>
+        </article>
+        <article>
+          <span class="method-num">03</span>
+          <h3>不要顺着链接去伤害人</h3>
+          <p>图中出现的机构、技术和个人，仅作为分析与批判的对象。不要联系、骚扰、攻击任何被提及的个人或组织，也不要去找当事人。证据链接用于阅读与核实，不是行动指南。</p>
+        </article>
+      </div>
+      <div class="legend" aria-label="证据类型图例">
+        <span class="legend-title">证据类型</span>
+        <span class="badge type-primary">一手档案</span>
+        <span class="badge type-report">调查报道</span>
+        <span class="badge type-academic">学术研究</span>
+        <span class="badge type-culture">文化文本</span>
+        <span class="badge type-reference">参考条目</span>
+        <span class="badge type-unverified">未证实</span>
+      </div>
+      <div class="legend status-legend" aria-label="证据状态图例">
+        <span class="legend-title">证据状态</span>
+        <span class="badge status-verified">已证实</span>
+        <span class="badge status-convicted">已判决</span>
+        <span class="badge status-report">媒体调查</span>
+        <span class="badge status-testimony">当事人陈述</span>
+        <span class="badge status-official">官方回应</span>
+        <span class="badge status-disputed">争议</span>
+        <span class="badge status-unconfirmed">未证实</span>
+        <span class="badge status-culture">文化现象</span>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="section-label"><span>COLOPHON</span><span>关于这张图</span></div>
+      <div class="about-grid">
+        <div>
+          <h2 id="about-title">一张本地的、<br>不收集你的冰山。</h2>
+          <p>这是一个静态网站。它不发送分析数据，不调用外部字体，不需要登录，也不会记录你看了什么。你的“已下潜”进度只保存在浏览器的 localStorage 里。</p>
+          <p>视觉与文本受中文兔子洞冰山图的“集体创作、按层下潜”形式启发，但本页的 120 个词条、解释与编排均为本地原创。参考项目：<a href="https://iceberg.hezihezi.com/" target="_blank" rel="noopener noreferrer">中文兔子洞冰山图</a>。</p>
+          <p>这不是一份完整的调查报告。它是一张索引：把散落在新闻、判决、通报和网络记忆里的名字，按深度排在一起。有些词条之间互相重叠，因为同一套机制会反复出现。</p>
+        </div>
+        <div class="about-meta">
+          <div><span>版本</span><b>1.0 · LOCAL</b></div>
+          <div><span>词条</span><b>120</b></div>
+          <div><span>层级</span><b>8</b></div>
+          <div><span>来源</span><b>48</b></div>
+          <div><span>外部依赖</span><b>0</b></div>
+          <div><span>数据</span><b>仅存储于本机</b></div>
+          <div><span>阅读建议</span><b>不要一次潜到底</b></div>
+        </div>
+      </div>
+      <p class="content-note">内容提示：本图涉及电击、体罚、非法拘禁、自杀、自残、精神控制与未成年人伤害。部分描述可能令人不适。你可以随时回到水面；如果你或身边的人正面临类似处境，请优先联系可信任的成年人、当地警方或法律援助机构。</p>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+      <p>向下，直到看见规则。</p>
+      <div class="footer-meta">
+        <span>THE CAMP ICEBERG / LOCAL EDITION</span>
+        <a href="#top">回到水面 ↑</a>
+      </div>
+    </footer>
+  </main>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close="modal"></div>
+    <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <header class="modal-head">
+        <div class="modal-depth"><span id="modal-tier"></span><b id="modal-depth"></b></div>
+        <button class="modal-close" id="modal-close" type="button" aria-label="关闭词条">×</button>
+      </header>
+      <div class="modal-scroll" id="modal-scroll">
+        <div id="modal-body"></div>
+      </div>
+    </article>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">这张冰山需要 JavaScript 才能展开词条与证据链。请启用 JavaScript 后刷新。</div>
+  </noscript>
+
+  <script src="data/core.js?v=1"></script>
+  <script src="data/sources.js?v=1"></script>
+  <script src="data/tiers-1.js?v=1"></script>
+  <script src="data/tiers-2.js?v=1"></script>
+  <script src="data/tiers-3.js?v=1"></script>
+  <script src="data/tiers-4.js?v=1"></script>
+  <script src="app.js?v=3"></script>
+</body>
+</html>
